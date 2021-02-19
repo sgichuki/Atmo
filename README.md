@@ -1,5 +1,5 @@
 # Wind 
-## Calculate and plot wind speed and wind direction from u,v in wind data 
+## Calculate and plot wind speed and direction from u,v in wind data 
  
 The data used here is from Sonic anemometer measurements made over a few hours in one day. read.table() "is to convert character variables (which are not converted to logical, numeric or complex) to factors" hence the need to set the stringsAsFactors to false. 
 1. Load the data 
@@ -30,3 +30,6 @@ After this I removed some NA values that were introduced when importing the data
 #Convert U,V,and W axis columns from character to numeric 
 windfile2_complete[,4:6] <- sapply(windfile2_complete[,4:6],as.numeric)
 ````
+
+3. Create functions to calculate wind speed and direction
+The wind components are eastward and northward wind vectors that are represented by the variables “U” and “V” respectively.The U wind component is parallel to the x-axis (i.e. longitude). A positive U wind comes from the west, and a negative U wind comes from the east. The V wind component is parallel to the y- axis (i.e. latitude). A positive V wind comes from the south, and a negative V wind comes from the north.
