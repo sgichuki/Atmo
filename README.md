@@ -3,7 +3,7 @@
 
 1. Load data 
 
-The data used here is from Sonic anemometer measurements made over a few hours in one day. The default for read.table() "is to convert character variables (which are not converted to logical, numeric or complex) to factors" hence the need to set the stringsAsFactors to false. 
+The data used here is from Sonic anemometer measurements made over a few hours in one day. The default for `read.table()`  "is to convert character variables (which are not converted to logical, numeric or complex) to factors" hence the need to set the stringsAsFactors to false. 
  ````
 library(data.table)
 library(tidyr)
