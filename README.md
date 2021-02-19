@@ -37,7 +37,7 @@ The figure below shows how the wind vector is related to the components U and V
 
 ![windspeed-diagram](windspeed-diagram.png)
 
-The wind components are eastward and northward wind vectors that are represented by the variables “U” and “V” respectively.The U wind component is parallel to the x-axis (i.e. longitude). A positive U wind comes from the west, and a negative U wind comes from the east. The V wind component is parallel to the y- axis (i.e. latitude). A positive V wind comes from the south, and a negative V wind comes from the north.The wind direction can be calculated using trigonometric functions: Angle = arctan(V/U), this is valid as long as U is not equal to zero. It is also good to know that the trigonometric functions in R return angles in radians.<sup>1</sup>
+The wind components are eastward and northward wind vectors that are represented by the variables “U” and “V” respectively.The U wind component is parallel to the x-axis (i.e. longitude). A positive U wind comes from the west, and a negative U wind comes from the east. The V wind component is parallel to the y- axis (i.e. latitude). A positive V wind comes from the south, and a negative V wind comes from the north.The wind direction can be calculated using trigonometric functions: Angle = arctan(V/U), this is valid as long as U is not equal to zero. You must also adjust for what quadrant you are in based on whether U and V are positive or negative.It is also good to know that the trigonometric functions in R return angles in radians.<sup>1</sup>
 In this the Sonic was aligned to the geographic north. This is also important to note because Sonic anemometers measure wind vector components which are relative to the orientation of the sonic array. Therefore, the orientation of the array must be determined, if there is an offset from North, then a correction has to be made. 
 
 ````
@@ -55,6 +55,7 @@ windSpd <-function(u,v){
   sqrt(u^2+v^2)
 }
 
+
 #Compute wind direction and wind speed using the functions just created
 #The openair package needs to have wind direction stored as "wd" and wind speed
 #stored as "ws" to pick those columns and plot the wind rose
@@ -62,6 +63,8 @@ windfile2_complete$wd <-windDir(windfile2_complete$u,windfile2_complete$v)
 windfile2_complete$ws <-windSpd(windfile2_complete$u,windfile2_complete$v)
 
 ````
+*NB:the %% in the `windDir` function above is the modulus operator, written `% ` or `mod` in most programming languages. In the calculation it ensures that the output is between 0 and 360 degrees.*
+
 4. Plot the wind rose 
 
 With the wind speed and direction calculated, the windrose is plotted using the windRose function from the 
