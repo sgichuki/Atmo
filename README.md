@@ -1,4 +1,3 @@
-# Wind 
 ## Calculate and plot wind speed and direction from u,v in wind data 
 
 1. Load data 
