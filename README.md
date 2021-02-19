@@ -71,4 +71,4 @@ With the wind speed and direction calculated, the windrose is plotted using the 
 
 ![windplot](windplot.png)
 
-<a name="Ref">1</a>: ![Derive Wind Speed and Direction With MERRA-2 Wind Components]NASA DISC (https://disc.gsfc.nasa.gov/information/data-in-action?title=Derive%20Wind%20Speed%20and%20Direction%20With%20MERRA-2%20Wind%20Components)
+<a name="Ref">1</a>:![Derive Wind Speed and Direction With MERRA-2 Wind Components-NASA DISC](https://disc.gsfc.nasa.gov/information/data-in-action?title=Derive%20Wind%20Speed%20and%20Direction%20With%20MERRA-2%20Wind%20Components)
