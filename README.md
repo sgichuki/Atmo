@@ -64,6 +64,7 @@ windfile2_complete$ws <-windSpd(windfile2_complete$u,windfile2_complete$v)
 ````
 4. Plot the wind rose 
 
-With the wind speed and direction calculated, the windrose is plotted using the windRose function from the ![openair package]( https://CRAN.R-project.org/package=openair)
+With the wind speed and direction calculated, the windrose is plotted using the windRose function from the 
+![openair package](https://cran.rproject.org/web/packages/openair/index.html)
 
-![windplot](windplot.png)
+      ![windplot](windplot.png)
