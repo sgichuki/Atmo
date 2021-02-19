@@ -37,8 +37,7 @@ The figure below shows how the wind vector is related to the components U and V
 
 ![windspeed-diagram](windspeed-diagram.png)
 
-The wind components are eastward and northward wind vectors that are represented by the variables “U” and “V” respectively.The U wind component is parallel to the x-axis (i.e. longitude). A positive U wind comes from the west, and a negative U wind comes from the east. The V wind component is parallel to the y- axis (i.e. latitude). A positive V wind comes from the south, and a negative V wind comes from the north.The wind direction can be calculated using trigonometric functions: Angle = arctan(V/U), this is valid as long as U is not equal to zero. You must also adjust for what quadrant you are in based on whether U and V are positive or negative.It is also good to know that the trigonometric functions in R return angles in radians.<sup>1</sup>
-In this the Sonic was aligned to the geographic north. This is also important to note because Sonic anemometers measure wind vector components which are relative to the orientation of the sonic array. Therefore, the orientation of the array must be determined, if there is an offset from North, then a correction has to be made. 
+The wind components are eastward and northward wind vectors that are represented by the variables “U” and “V” respectively.The U wind component is parallel to the x-axis (i.e. longitude). A positive U wind comes from the west, and a negative U wind comes from the east. The V wind component is parallel to the y- axis (i.e. latitude). A positive V wind comes from the south, and a negative V wind comes from the north. The wind direction can be calculated using trigonometric functions: Angle = arctan(V/U), this is valid as long as U is not equal to zero. You must also adjust for what quadrant you are in based on whether U and V are positive or negative. The built-in arctan2() function in R and some other programming languages will handle this. However, one still has to know whether they are working in radians or degrees when evaluating the results. The trigonometric functions in R return angles in radians.<sup>1</sup>
 
 ````
 #Create two functions to calculate the wind direction and wind speed from u,v 
@@ -71,3 +70,5 @@ With the wind speed and direction calculated, the windrose is plotted using the 
 ![openair package](https://cran.rproject.org/web/packages/openair/index.html)
 
 ![windplot](windplot.png)
+
+<a name="Ref">1</a>: ![Derive Wind Speed and Direction With MERRA-2 Wind Components]NASA DISC (https://disc.gsfc.nasa.gov/information/data-in-action?title=Derive%20Wind%20Speed%20and%20Direction%20With%20MERRA-2%20Wind%20Components)
