@@ -3,7 +3,7 @@
 
 1. Load data 
 
-The data used here is from Sonic anemometer measurements made over a few hours in one day. The default for `read.table()`  "is to convert character variables (which are not converted to logical, numeric or complex) to factors" hence the need to set the stringsAsFactors to false. 
+The data used here is from Sonic anemometer measurements made over a few hours in one day. The default for `read.table()` *"is to convert character variables (which are not converted to logical, numeric or complex) to factors"* hence the need to set the stringsAsFactors to false. 
  ````
 library(data.table)
 library(tidyr)
@@ -25,7 +25,7 @@ windfile2<-separate(windfile,
 names(windfile2)<-c("Date","Time","NodeAddress","u","v","w","units(m/s)","SpeedOfSound","SonicTemp")
 ````
 2. Convert data formats
-After this I removed some NA values that were introduced when importing the data. All the data was in character format so the next step is to change it to numeric before doing the calculation. The ```sapply() function makes it possible to do this over all the columns that need it 
+After this I removed some NA values that were introduced when importing the data. All the data was in character format so the next step is to change it to numeric before doing the calculation. The `sapply()` function makes it possible to do this over all the columns that need it 
 
 ````
 #Convert U,V,and W axis columns from character to numeric 
@@ -38,7 +38,7 @@ The figure below shows how the wind vector is related to the components U and V
 ![windspeed-diagram](windspeed-diagram.png)
 
 The wind components are eastward and northward wind vectors that are represented by the variables “U” and “V” respectively.The U wind component is parallel to the x-axis (i.e. longitude). A positive U wind comes from the west, and a negative U wind comes from the east. The V wind component is parallel to the y- axis (i.e. latitude). A positive V wind comes from the south, and a negative V wind comes from the north.The wind direction can be calculated using trigonometric functions: Angle = arctan(V/U), this is valid as long as U is not equal to zero. It is also good to know that the trigonometric functions in R return angles in radians.<sup>1</sup>
-In this the Sonic was aligned to the geographic north. This is also imoportant to note because Sonic anemometers measure wind vector components which are relative to the orientation of the sonic array. Therefore, the orientation of the array must be determined, if there is an offset from North, then a correction has to be made. 
+In this the Sonic was aligned to the geographic north. This is also important to note because Sonic anemometers measure wind vector components which are relative to the orientation of the sonic array. Therefore, the orientation of the array must be determined, if there is an offset from North, then a correction has to be made. 
 
 ````
 #Create two functions to calculate the wind direction and wind speed from u,v 
