@@ -5,7 +5,7 @@ library(openair)
 options(stringsAsFactors=F)
 
 #Load the wind data file 
-windfile<-read.table("~/GitHub/Atmo/3D-monitoring_2019-09-13.txt",skip=2,fill=TRUE,sep="")
+windfile<-read.table("~/GitHub/Atmo/Sonicdata.txt",skip=2,fill=TRUE,sep="")
 
 #Use separate function from dplyr to split column 3 into additional columns. 
 #Some NA values are introduced on some rows
