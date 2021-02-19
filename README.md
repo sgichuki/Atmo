@@ -32,4 +32,5 @@ windfile2_complete[,4:6] <- sapply(windfile2_complete[,4:6],as.numeric)
 ````
 
 3. Create functions to calculate wind speed and direction
+
 The wind components are eastward and northward wind vectors that are represented by the variables “U” and “V” respectively.The U wind component is parallel to the x-axis (i.e. longitude). A positive U wind comes from the west, and a negative U wind comes from the east. The V wind component is parallel to the y- axis (i.e. latitude). A positive V wind comes from the south, and a negative V wind comes from the north.
