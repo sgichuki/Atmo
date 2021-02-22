@@ -1,6 +1,6 @@
 ## Calculate wind speed and direction from u,v in wind data 
 
-1. Load data 
+# Load data 
 
 The data used here is from Sonic anemometer measurements made over a few hours in one day. The default for `read.table()` *"is to convert character variables (which are not converted to logical, numeric or complex) to factors"* hence the need to set the stringsAsFactors to false. 
  ````
@@ -23,7 +23,7 @@ windfile2<-separate(windfile,
 #Name all rows in your data frame 
 names(windfile2)<-c("Date","Time","NodeAddress","u","v","w","units(m/s)","SpeedOfSound","SonicTemp")
 ````
-2. Convert data formats
+# Convert data formats
 After this I removed some NA values that were introduced when importing the data. All the data was in character format so the next step is to change it to numeric before doing the calculation. The `sapply()` function makes it possible to do this over all the columns that need it 
 
 ````
@@ -31,7 +31,7 @@ After this I removed some NA values that were introduced when importing the data
 windfile2_complete[,4:6] <- sapply(windfile2_complete[,4:6],as.numeric)
 ````
 
-3. Create functions to calculate wind speed and direction
+# Create functions to calculate wind speed and direction
 The figure below shows how the wind vector is related to the components U and V
 
 ![windspeed-diagram](windspeed-diagram.png)
@@ -63,7 +63,7 @@ windfile2_complete$ws <-windSpd(windfile2_complete$u,windfile2_complete$v)
 ````
 *NB:the %% in the `windDir` function above is the modulus operator, written `% ` or `mod` in most programming languages. In the calculation it ensures that the output is between 0 and 360 degrees.*
 
-4. Plot the wind rose 
+# Plot the wind rose 
 
 With the wind speed and direction calculated, the windrose is plotted using the windRose function from the 
 ![openair package](https://cran.rproject.org/web/packages/openair/index.html)
