@@ -2,7 +2,7 @@
 
 ### Load data 
 
-The data used here is from Sonic anemometer measurements made over a few hours in one day. The default for `read.table()` *"is to convert character variables (which are not converted to logical, numeric or complex) to factors"* hence the need to set the stringsAsFactors to false. 
+This is a script I use often in my work, to plot wind data from the Sonic anemometer after field experiments. I decided to document it because while some aspects may change, the general rationale of getting the wind speed and direction from the Sonic's u and v values is generally the same. The data used here is from Sonic anemometer measurements made over a few hours in one day. The default for `read.table()` *"is to convert character variables (which are not converted to logical, numeric or complex) to factors"* hence the need to set the stringsAsFactors to false. 
  ````
 library(data.table)
 library(tidyr)
